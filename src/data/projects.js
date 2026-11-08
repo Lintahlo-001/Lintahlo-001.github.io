@@ -1,0 +1,153 @@
+export const projects = [
+  {
+    id: 'ember',
+    name: 'Ember',
+    summary: 'Offline-first Android app for tracking a Pokémon card collection and its value.',
+    description:
+      'Ember is an unofficial app for Pokémon card collectors. I can search cards, log what I own (quantity, condition, variant, notes), keep a wishlist, browse sets and the Pokédex, and track the value of a collection across 20,000+ cards. It keeps working offline and syncs when the connection returns.',
+    role: 'Solo developer',
+    teamSize: 'Solo',
+    stack: [
+      'React Native (Expo)',
+      'TypeScript',
+      'Express',
+      'PostgreSQL',
+      'Supabase',
+      'SQLite',
+      'Render',
+    ],
+    highlights: [
+      'Offline-first: every write lands in SQLite and an ordered outbox in one transaction, then syncs to Supabase through an idempotent call, so retries never create duplicates.',
+      'Express and PostgreSQL backend that mirrors a public card database into its own catalog with a daily sync, deployed on Render and kept fresh by cron jobs.',
+      'Backup image source plus sharp WebP optimization for cards that are missing artwork.',
+      'Supabase auth (email/password and Google OAuth) with Row Level Security, so each user can only reach their own data.',
+      'Set progress, Pokédex views, and multi-currency pricing from live exchange rates.',
+    ],
+    screenshots: [
+      { src: 'ember/01-welcome.webp', alt: 'Welcome', caption: 'Welcome' },
+      { src: 'ember/02-dashboard.webp', alt: 'Dashboard', caption: 'Dashboard' },
+      { src: 'ember/03-card-detail.webp', alt: 'Card Detail', caption: 'Card Detail' },
+      { src: 'ember/04-collection.webp', alt: 'My Cards', caption: 'My Cards' },
+    ],
+    links: [{ type: 'repo', url: 'https://github.com/Lintahlo-001/Ember' }],
+  },
+  {
+    id: 'monsterdex',
+    name: 'MonsterDex',
+    summary:
+      'Location-based monster-catching mobile game, built on AWS for a Cloud Computing course.',
+    description:
+      'MonsterDex is a mobile game inspired by Pokémon GO: players scan their surroundings with GPS and catch monsters that spawn at real-world coordinates. I built it on my own as a Cloud Computing course project to practice real cloud networking. The AWS backend has since been shut down, so the app no longer runs, but the code and docs are public.',
+    role: 'Solo developer',
+    teamSize: 'Solo',
+    stack: [
+      'Flutter',
+      'Dart',
+      'Node.js',
+      'Express',
+      'MySQL',
+      'AWS EC2',
+      'AWS RDS',
+      'AWS Lambda',
+      'VPC Peering',
+      'Tailscale',
+    ],
+    highlights: [
+      'GPS proximity scan using the Haversine formula, with a catch sound and a flashlight strobe on a successful catch.',
+      'Node.js API on EC2 in Paris, talking to a managed RDS MySQL database in N. Virginia over cross-region VPC Peering.',
+      'Tailscale VPN secures client-to-server traffic, and the app checks server and VPN status before every action.',
+      'A Lambda function lets the app start and stop the server from the phone, with no AWS credentials stored in the app.',
+      'Full monster management: spawn points picked on an OpenStreetMap map with a live radius preview, plus a top-10 leaderboard.',
+    ],
+    screenshots: [
+      { src: 'monsterdex/01-welcome.webp', alt: 'Welcome', caption: 'Welcome' },
+      { src: 'monsterdex/02-dashboard.webp', alt: 'Dashboard', caption: 'Dashboard' },
+      { src: 'monsterdex/03-catch.webp', alt: 'Catch', caption: 'Catch' },
+      { src: 'monsterdex/04-leaderboard.webp', alt: 'Leaderboard', caption: 'Leaderboard' },
+    ],
+    links: [{ type: 'repo', url: 'https://github.com/Lintahlo-001/MonsterDex' }],
+  },
+  {
+    id: 'veiltext',
+    name: 'VeilText',
+    summary: 'Chrome extension that filters unwanted text in real time, entirely on your device.',
+    description:
+      'VeilText is a Chrome extension that finds and covers undesired words on web pages as you browse. It matches text with a switchable multi-pattern engine (Aho-Corasick or Wu-Manber) and never sends page data to a server.',
+    role: 'Developer',
+    teamSize: '4-person',
+    stack: ['JavaScript', 'Chrome Extension (Manifest)', 'Docker'],
+    highlights: [
+      'Two interchangeable matching algorithms, Aho-Corasick and Wu-Manber, switchable from Settings and producing the same results, which makes them easy to benchmark.',
+      'Three filter modes (blur, hide, replace), a custom keyword list, an allowlist, and click-to-reveal behind a content warning.',
+      'Filters content that loads later, using a MutationObserver with debounced batching, open Shadow DOM support, and single-page-app navigation detection.',
+      'Privacy-first: all matching runs locally, with zero external requests for filtering.',
+      'Default word list merged from four public sources, including a study of Filipino swear words.',
+    ],
+    screenshots: [
+      {
+        src: 'veiltext/01-popup-dashboard.webp',
+        alt: 'Popup Dashboard',
+        caption: 'Popup Dashboard',
+      },
+      {
+        src: 'veiltext/02-algorithm-options.webp',
+        alt: 'Algorithm Options',
+        caption: 'Algorithm Options',
+      },
+      { src: 'veiltext/03-filter-modes.webp', alt: 'Filter Modes', caption: 'Filter Modes' },
+    ],
+    links: [
+      {
+        type: 'store',
+        url: 'https://chromewebstore.google.com/detail/veiltext-profanity-filter/clhbicgajbeccgkhkelpkompmoeeomin',
+      },
+      { type: 'repo', url: 'https://github.com/Lintahlo-001/VeilText' },
+    ],
+  },
+  {
+    id: 'moodcheck',
+    name: 'MoodCheck',
+    summary: 'Daily mood tracker that answers every entry with a quote, song, or advice.',
+    description:
+      'MoodCheck helps people track their emotional well-being day by day. You pick a mood icon, and the app replies with something encouraging. A calendar view shows how your moods change over time.',
+    role: 'Front-end and Back-end Developer',
+    teamSize: '4-person',
+    stack: ['Flutter', 'Dart', 'Supabase'],
+    highlights: [
+      'Co-developed in a 4-person team, working on both the front end and the back end.',
+      'Supabase handles accounts (with email verification) and mood storage.',
+      'After each entry, the app shows a randomized quote, song, or piece of advice.',
+      'Calendar view of past moods, plus insights: average mood per day and mood counts by month, year, or lifetime.',
+      'Daily reflection notes, and the ability to add, edit, or delete entries for past days.',
+    ],
+    screenshots: [
+      { src: 'moodcheck/01-welcome.webp', alt: 'Welcome', caption: 'Welcome' },
+      { src: 'moodcheck/02-log-mood.webp', alt: 'Log Mood', caption: 'Log Mood' },
+      { src: 'moodcheck/03-calendar.webp', alt: 'Calendar', caption: 'Calendar' },
+      { src: 'moodcheck/04-log-stats.webp', alt: 'Log Stats', caption: 'Log Stats' },
+    ],
+    links: [{ type: 'repo', url: 'https://github.com/Lintahlo-001/MoodCheck' }],
+  },
+  {
+    id: 'my-game',
+    name: 'My Game Very Original Title',
+    summary: 'Simple 2D platformer where a penguin collects every ice cream across 3 levels.',
+    description:
+      'A 2D platformer built in Unity as a school requirement. You play a penguin on a mission to collect every ice cream: dodge spikes, throw snowballs at enemies, grab power-ups, and rack up points across 3 levels. The art and audio come from third-party asset packs, credited in the repo.',
+    role: 'Solo Developer',
+    teamSize: 'Solo',
+    stack: ['Unity (2D)', 'C#'],
+    highlights: [
+      'Three levels, each cleared by reaching the ice cream.',
+      'Snowball combat: left click throws a snowball to defeat enemies, while spikes and enemies are hazards.',
+      'Pickups with different effects: stars for bonus points, hearts to heal, and lightning for a temporary speed boost.',
+      'Keyboard and mouse controls with a pause menu, shipped as a Windows build on the repo Releases page.',
+    ],
+    screenshots: [
+      { src: 'my-game/01-gameplay.webp', alt: 'Gameplay', caption: 'Gameplay' },
+      { src: 'my-game/02-gameplay.webp', alt: 'Gameplay', caption: 'Gameplay' },
+      { src: 'my-game/03-gameplay.webp', alt: 'Gameplay', caption: 'Gameplay' },
+    ],
+    links: [{ type: 'repo', url: 'https://github.com/Lintahlo-001/My_Game_Very_Original_Title' }],
+  },
+];
