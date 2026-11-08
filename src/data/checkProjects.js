@@ -28,6 +28,10 @@ export function findProjectProblems(projects) {
 
     if (!project.links?.length) errors.push(`${label}: needs at least one link`);
 
+    if (!project.logo?.src) {
+      errors.push(`${label}: needs a logo (it is the card cover)`);
+    }
+
     if (!project.screenshots?.length) {
       errors.push(`${label}: has NO screenshots (at least 1 is required)`);
     } else {

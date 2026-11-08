@@ -23,6 +23,7 @@ export const projects = [
       'Supabase auth (email/password and Google OAuth) with Row Level Security, so each user can only reach their own data.',
       'Set progress, Pokédex views, and multi-currency pricing from live exchange rates.',
     ],
+    logo: { src: 'ember/logo.png' },
     screenshots: [
       { src: 'ember/01-welcome.webp', alt: 'Welcome', caption: 'Welcome' },
       { src: 'ember/02-dashboard.webp', alt: 'Dashboard', caption: 'Dashboard' },
@@ -59,6 +60,7 @@ export const projects = [
       'A Lambda function lets the app start and stop the server from the phone, with no AWS credentials stored in the app.',
       'Full monster management: spawn points picked on an OpenStreetMap map with a live radius preview, plus a top-10 leaderboard.',
     ],
+    logo: { src: 'monsterdex/logo.png' },
     screenshots: [
       { src: 'monsterdex/01-welcome.webp', alt: 'Welcome', caption: 'Welcome' },
       { src: 'monsterdex/02-dashboard.webp', alt: 'Dashboard', caption: 'Dashboard' },
@@ -83,6 +85,7 @@ export const projects = [
       'Privacy-first: all matching runs locally, with zero external requests for filtering.',
       'Default word list merged from four public sources, including a study of Filipino swear words.',
     ],
+    logo: { src: 'veiltext/logo.jpg' },
     screenshots: [
       {
         src: 'veiltext/01-popup-dashboard.webp',
@@ -120,6 +123,7 @@ export const projects = [
       'Calendar view of past moods, plus insights: average mood per day and mood counts by month, year, or lifetime.',
       'Daily reflection notes, and the ability to add, edit, or delete entries for past days.',
     ],
+    logo: { src: 'moodcheck/logo.png' },
     screenshots: [
       { src: 'moodcheck/01-welcome.webp', alt: 'Welcome', caption: 'Welcome' },
       { src: 'moodcheck/02-log-mood.webp', alt: 'Log Mood', caption: 'Log Mood' },
@@ -143,6 +147,7 @@ export const projects = [
       'Pickups with different effects: stars for bonus points, hearts to heal, and lightning for a temporary speed boost.',
       'Keyboard and mouse controls with a pause menu, shipped as a Windows build on the repo Releases page.',
     ],
+    logo: { src: 'my-game/logo.png' },
     screenshots: [
       { src: 'my-game/01-gameplay.webp', alt: 'Gameplay', caption: 'Gameplay' },
       { src: 'my-game/02-gameplay.webp', alt: 'Gameplay', caption: 'Gameplay' },
