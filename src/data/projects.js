@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 'ember',
     name: 'Ember',
-    summary: 'Offline-first Android app for tracking a Pokémon card collection and its value.',
+    summary: 'Android app for tracking a Pokémon card collection and its value.',
     description:
       'Ember is an unofficial app for Pokémon card collectors. I can search cards, log what I own (quantity, condition, variant, notes), keep a wishlist, browse sets and the Pokédex, and track the value of a collection across 20,000+ cards. It keeps working offline and syncs when the connection returns.',
     role: 'Solo developer',
