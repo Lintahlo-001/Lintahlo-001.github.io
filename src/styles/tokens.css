@@ -1,0 +1,179 @@
+@font-face {
+  font-family: 'FOT Rodin';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('FOT-Rodin Pro B'),
+    local('RodinPro-B'),
+    url('../assets/fonts/FOT_Rodin_Pro_B.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FOT Skip';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('FOT-Skip Std B'),
+    local('SkipStd-B'),
+    url('../assets/fonts/FOT_Skip_Std_B.woff2') format('woff2');
+}
+
+:root {
+  /* ---- Color: raw palette ---- */
+  --black: #000000; /* paint drips, hard shadows */
+  --ink: #050a1f; /* near-black navy, main text on light */
+  --navy-900: #06103a; /* dark sections, menu plates */
+  --navy-700: #0b2278; /* main decor color (use plenty) */
+  --cobalt-600: #1457d9; /* links and hover on light */
+  --blue-500: #1e8ff0;
+  --sky-400: #3fb0ff;
+  --cyan-300: #7fdcff;
+  --ice-100: #e3f6ff; /* pale panels */
+  --white: #ffffff;
+
+  /* ---- Color: roles ---- */
+  --bg-page: var(--ice-100);
+  --bg-panel: var(--white);
+  --bg-dark: var(--navy-900);
+  --text: var(--ink);
+  --text-on-dark: var(--white);
+  --link: var(--cobalt-600);
+  --border: var(--ink);
+
+  /* Section backdrops */
+  --grad-sky: linear-gradient(
+    180deg,
+    var(--blue-500) 0%,
+    var(--sky-400) 40%,
+    var(--cyan-300) 75%,
+    var(--ice-100) 100%
+  );
+
+  /* Decor colors */
+  --decor-dark: var(--navy-700);
+  --decor-darker: var(--navy-900);
+  --decor-light: var(--sky-400);
+  --drip: var(--black);
+
+  /* Decor opacity scale */
+  --decor-o-1: 1;
+  --decor-o-2: 0.85;
+  --decor-o-3: 0.6;
+  --decor-o-4: 0.4;
+  --decor-o-5: 0.25;
+
+  /* Decor sizes */
+  --butterfly-max: 4.75rem;
+  --butterfly-md: 3.25rem;
+  --butterfly-min: 2.25rem;
+  --cluster-w: 30rem;
+  --cluster-h: 15.625rem;
+
+  /* BigText */
+  --bt-size-min: 4.2rem;
+  --bt-size-max: 11rem;
+  --bt-size-basis: 30rem;
+  --bt-char-w: 0.74em;
+  --bt-edge-crop: 0.17em;
+  --bt-echo-offset: 0.07em;
+  --bt-skew: var(--skew-display);
+  --bt-sky: var(--black);
+  --bt-sky-echo: var(--cyan-300);
+  --bt-ice: var(--black);
+  --bt-ice-echo: var(--sky-400);
+  --bt-navy: var(--cobalt-600);
+  --bt-navy-echo: var(--black);
+
+  /* PaintDrip */
+  --drip-h: 9.2rem;
+  --drip-max-len: 4.9rem;
+  --drip-band-gap: 11rem;
+  --drip-section-pad-top: 9.6rem;
+
+  /* ---- Type ---- */
+  --font-display: 'FOT Rodin', 'Archivo Black', 'Arial Black', Impact, system-ui, sans-serif;
+  --font-body: 'FOT Skip', 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-body: 1.0625rem; /* 17px */
+  --fs-small: 0.9375rem;
+  --fs-h3: clamp(1.25rem, 1rem + 1vw, 1.625rem);
+  --fs-h2: clamp(2rem, 1.2rem + 3.5vw, 3.75rem);
+  --fs-h1: clamp(2.75rem, 1.5rem + 6vw, 6.5rem);
+  --lh-body: 1.6;
+  --lh-display: 0.95;
+  --skew-display: -10deg;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+  --space-9: 7rem;
+  --content-max: 70rem;
+  --menu-gutter: 20.5rem;
+  --section-min-h: 30rem;
+  --section-overlap: -3.3rem;
+
+  /* ---- Shape: flat, angular, no gloss ---- */
+  --radius: 0;
+  --border-w: 3px;
+  --shadow-hard: 6px 6px 0 var(--ink);
+  --shadow-hard-lg: 10px 10px 0 var(--ink);
+  --cut-sm: polygon(0 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%);
+  --cut-down-right: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+  --cut-down-left: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 4vw));
+  --blade: polygon(4% 0, 100% 14%, 96% 100%, 0 86%);
+  --blade-r: polygon(0 14%, 96% 0, 100% 86%, 4% 100%);
+
+  /* ---- Floating menu ---- */
+  --menu-plate: var(--navy-900); /* inactive chip */
+  --menu-plate-active: var(--white);
+  --menu-edge: var(--black); /* offset edge behind the active chip */
+  --menu-c0: var(--ink); /* active text */
+  --menu-c1: #8fe3ff; /* neighbor 1 */
+  --menu-c2: #5cc4f5; /* neighbor 2 */
+  --menu-c3: #3fa3ec; /* neighbor 3+ */
+  --menu-size-0: clamp(1.9rem, 3vw, 2.4rem);
+  --menu-size-1: clamp(1.35rem, 2.1vw, 1.65rem);
+  --menu-size-2: clamp(1.2rem, 1.8vw, 1.45rem);
+  --menu-size-3: clamp(1.1rem, 1.6vw, 1.3rem);
+  --menu-tilt-odd: -3deg;
+  --menu-tilt-even: 2.5deg;
+  --menu-shift-even: 1.6rem;
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --t-fast: 140ms;
+  --t-med: 320ms;
+  --t-slow: 600ms;
+
+  /* ---- Focus: black + white double ring, visible on any background ---- */
+  --focus-ring: 0 0 0 3px var(--white), 0 0 0 6px var(--ink);
+}
+
+/* Visible focus everywhere */
+:where(a, button, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Reduced motion: no animation, navigation still works */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 0ms;
+    --t-med: 0ms;
+    --t-slow: 0ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
