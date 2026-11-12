@@ -8,8 +8,9 @@
     "prebuild": "npm run check:projects",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint .",
+    "lint": "oxlint .",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "check:projects": "node scripts/check-projects.js"
   },
   "dependencies": {
